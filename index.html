@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестування</title>
+    <meta charset="UTF-8">
+    <style>
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Тестування</h1>
+
+<h2>Питання: Що можна пити?</h2>
+
+<form id="quizForm">
+    <input type="radio" id="option1" name="answer" value="water">
+    <label for="option1">Вода</label><br>
+
+    <input type="radio" id="option2" name="answer" value="book">
+    <label for="option2">Книга</label><br>
+
+    <input type="radio" id="option3" name="answer" value="tree">
+    <label for="option3">Дерево</label><br>
+
+    <button type="button" onclick="checkAnswer()">Перевірити</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+    function checkAnswer() {
+        var selectedOption = document.querySelector('input[name="answer"]:checked');
+        var result = document.getElementById('result');
+
+        if (selectedOption && selectedOption.value === 'water') {
+            result.innerText = 'Вірно! Вода - це правильна відповідь.';
+        } else {
+            result.innerText = 'Неправильно. Спробуйте ще раз.';
+        }
+    }
+</script>
+</body>
+</html>
